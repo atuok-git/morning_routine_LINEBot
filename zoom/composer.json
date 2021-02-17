@@ -1,0 +1,6 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^7.2",
+        "lcobucci/jwt": "3.3"
+    }
+}

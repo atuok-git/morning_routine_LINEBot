@@ -1,6 +1,5 @@
 <?php
 require('vendor/autoload.php');
-//require('../googleCalendar/index.php');
 
 use GuzzleHttp\Client;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
@@ -9,10 +8,14 @@ use Lcobucci\JWT\Builder;
 
 const BASE_URI = 'https://api.zoom.us/v2/';
 
+
 function createJwtToken()
 {
-    $api_key = 'xxxxxx';
-    $api_secret = 'xxxxxx';
+    //API_key取得
+    require_once dirname(__FILE__) . '/../api_key.php';
+    $api_key = getApiKey('access_token_zoom'); 
+    $api_secret = getApiKey('secret_token_zoom');
+
     $signer = new Sha256;
     $key = new Key($api_secret);
     $time = time();
@@ -111,13 +114,15 @@ function sendRequest($method, $path, $client_params)
     $result['join_url'] = $result['join_url'] . '&openExternalBrowser=1';
     return $result;
 }
+
 /*
 echo "<pre>";
 $datas['type'] = 2;
 $datas['datetime'] = '2021-01-27T21:00';
 $meeting = createMeeting($datas);
-//print_r($meeting);
+print_r($meeting);
 */
+
 
 ?>
 

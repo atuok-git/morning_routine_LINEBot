@@ -1,9 +1,9 @@
 <?php
 //GoogleAPIライブラリを読み込む
-require_once (dirname(__FILE__) . '/vendor/autoload.php');
-//先ほど取得したAPIキーを定数にセットする
-const API_KEY = "xxxxxx";
-
+require_once dirname(__FILE__) . '/vendor/autoload.php';
+require_once dirname(__FILE__) . '/../api_key.php';
+//const API_KEY = "AIzaSyC1X3EFMgvz8qTDwmMLRgAKLFu6S9hC7Q0";
+define('API_KEY', getApiKey('Youtube_api'));
 
 //動画を取得する.
 function searchVideos($parts) 
@@ -30,6 +30,7 @@ function searchVideos($parts)
         echo htmlspecialchars($e->getMessage());
         exit;
     }
+
     foreach ($searchResponse['items'] as $search_result) {
         $videos[] = $search_result;
     }

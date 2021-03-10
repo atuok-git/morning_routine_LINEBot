@@ -60,7 +60,6 @@ function messageConfirmPlan() {
                             //'initial' => "2021-01-26T16:10",
                             'initial' => $now_date,
                         ],
-
                 ]
             ]
         ]

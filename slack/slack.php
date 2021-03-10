@@ -1,6 +1,9 @@
 <?php
 function sendMessage($message) {
-    $url = 'https://hooks.slack.com/services/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';
+    //Slack_API
+    require_once dirname(__FILE__) . '/../api_key.php';
+    $url = getApiKey('slack_url');
+
     $message = [
         "channel" => "slackapi",
         "username" => "System",

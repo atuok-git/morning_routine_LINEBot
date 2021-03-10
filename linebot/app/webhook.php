@@ -4,11 +4,8 @@ session_start();
 require_once('./LINEBotTiny.php');
 require_once('./function.php');
 require_once('./message.php');
-//require_once('../../youtube/search.php');
+require_once('../../api_key.php');
 
-//print_r(searchVideos("腹筋"));
-//print_r(message());
-//$test = message();
 
  /**
  * Copyright 2016 LINE Corporation
@@ -27,9 +24,9 @@ require_once('./message.php');
  */
 
 
-
-$channelAccessToken = 'xxxxxxx';
-$channelSecret = 'xxxxxxx';
+//API_key取得
+$channelAccessToken = getApiKey('access_token_line'); 
+$channelSecret = getApiKey('secret_token_line');
 
 //共通部分の関数化
 function replyMessage($client, $reply_token, $messages) {
@@ -129,7 +126,7 @@ foreach ($client->parseEvents() as $event) {
                 }
 
                 //返信MAXは5件のため、条件ぎめ
-                if ($shop_count > 5) {
+                if ($shop_count > 6) {
                     $shop_count = 5;
                 }
 

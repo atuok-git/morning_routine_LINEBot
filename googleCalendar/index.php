@@ -32,7 +32,8 @@ function getCalendar($params) {
      * 予定の取得
      */
     // カレンダーID
-    $calendarId = 'goaisft8fq1a4t9d1pbi565sq0@group.calendar.google.com';
+    require_once dirname(__FILE__) . '/../api_key.php';
+    $calendar_id = getApiKey('calendar_id');
 
     // 取得時の詳細設定
  
@@ -65,7 +66,7 @@ function getCalendar($params) {
             'timeMax' => date('c',strtotime("tomorrow")),//2019年1月1日以降の予定を取得対象
         );
     }
-    $results = $service->events->listEvents($calendarId, $optParams);
+    $results = $service->events->listEvents($calendar_id, $optParams);
     $events = $results->getItems();
     return $events;
 }
@@ -132,7 +133,8 @@ function insertCalendar($params) {
      * 予定の追加
      */
     // カレンダーID
-    $calendarId = 'goaisft8fq1a4t9d1pbi565sq0@group.calendar.google.com';
+    require_once dirname(__FILE__) . '/../api_key.php';
+    $calendar_id = getApiKey('calendar_id');
 
     if ($params['type'] == 2) {
         //zoom追加時の処理テスト
@@ -161,7 +163,7 @@ function insertCalendar($params) {
         ));
     } else {
     }
-    $event = $service->events->insert($calendarId, $event);
+    $event = $service->events->insert($calendar_id, $event);
     return $event;
 }
 /*

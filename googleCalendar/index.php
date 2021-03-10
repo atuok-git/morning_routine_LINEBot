@@ -4,7 +4,7 @@ function calendarParams() {
     // composerでインストールしたライブラリを読み込む
     require_once __DIR__.'/vendor/autoload.php';
     // サービスアカウント作成時にダウンロードしたjsonファイル
-    $aimJsonPath = __DIR__ . '/key/eco-layout-295906-2970f5908411.json';
+    $aimJsonPath = __DIR__ . '/key/google_key.json';
 
     // サービスオブジェクトを作成
     $client = new Google_Client();

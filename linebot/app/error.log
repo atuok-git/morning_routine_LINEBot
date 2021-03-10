@@ -1671,3 +1671,69 @@ Array
 
 )
 
+Array
+(
+    [type] => message
+    [replyToken] => b4aaa105c9574dacae844a83c00bb9d2
+    [source] => Array
+        (
+            [userId] => Udc99ef85a798984f3729c94b9a912a78
+            [type] => user
+        )
+
+    [timestamp] => 1615360746717
+    [mode] => active
+    [message] => Array
+        (
+            [type] => text
+            [id] => 13691598279026
+            [text] => 予定
+        )
+
+)
+
+Array
+(
+    [type] => message
+    [replyToken] => 16e996f7820e4389bc41e295381fe3a8
+    [source] => Array
+        (
+            [userId] => Udc99ef85a798984f3729c94b9a912a78
+            [type] => user
+        )
+
+    [timestamp] => 1615360748728
+    [mode] => active
+    [message] => Array
+        (
+            [type] => text
+            [id] => 13691598418617
+            [text] => 今日の予定
+        )
+
+)
+
+Array
+(
+    [type] => postback
+    [replyToken] => 1d7ad1c35afa49dbba8da5376abcb3f9
+    [source] => Array
+        (
+            [userId] => Udc99ef85a798984f3729c94b9a912a78
+            [type] => user
+        )
+
+    [timestamp] => 1615360754721
+    [mode] => active
+    [postback] => Array
+        (
+            [data] => dataId=AnotherdayPlan
+            [params] => Array
+                (
+                    [datetime] => 2021-03-15T16:19
+                )
+
+        )
+
+)
+

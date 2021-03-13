@@ -1,1 +1,43 @@
 
+Array
+(
+    [type] => message
+    [replyToken] => eda3553793dd4a47847822b25757a742
+    [source] => Array
+        (
+            [userId] => Udc99ef85a798984f3729c94b9a912a78
+            [type] => user
+        )
+
+    [timestamp] => 1615641254679
+    [mode] => active
+    [message] => Array
+        (
+            [type] => text
+            [id] => 13710703937580
+            [text] => 予定
+        )
+
+)
+
+Array
+(
+    [type] => message
+    [replyToken] => 6e18d0eaebe84f89b47e71a9b907e2e5
+    [source] => Array
+        (
+            [userId] => Udc99ef85a798984f3729c94b9a912a78
+            [type] => user
+        )
+
+    [timestamp] => 1615641256666
+    [mode] => active
+    [message] => Array
+        (
+            [type] => text
+            [id] => 13710704100531
+            [text] => 今日の天気
+        )
+
+)
+

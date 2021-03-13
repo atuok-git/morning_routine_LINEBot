@@ -5,7 +5,7 @@
 // composerでインストールしたライブラリを読み込む
 require_once __DIR__.'/vendor/autoload.php';
 // サービスアカウント作成時にダウンロードしたjsonファイル
-$aimJsonPath = __DIR__ . '/key/eco-layout-295906-2970f5908411.json';
+$aimJsonPath = __DIR__ . '/key/google_key.json';
 
 // サービスオブジェクトを作成
 $client = new Google_Client();
@@ -27,7 +27,8 @@ $service = new Google_Service_Calendar($client);
  * 予定の取得
  */
 // カレンダーID
-$calendarId = 'goaisft8fq1a4t9d1pbi565sq0@group.calendar.google.com';
+require_once dirname(__FILE__) . '/../api_key.php';
+$calendar_id = getApiKey('calendar_id');
 
 // 取得時の詳細設定
 $optParams = array(
@@ -38,7 +39,7 @@ $optParams = array(
     'timeMin' => date('c',strtotime("2021-01-20")),//2019年1月1日以降の予定を取得対象
     'timeMax' => date('c',strtotime("2021-01-21")),//2019年1月1日以降の予定を取得対象
 );
-$results = $service->events->listEvents($calendarId, $optParams);
+$results = $service->events->listEvents($calendar_id, $optParams);
 $events = $results->getItems();
 
 echo "<pre>";
